@@ -1,6 +1,7 @@
 # Willkommen bei MyOOS [Shopsystem]
    
-   Master: [![Build Status](https://secure.travis-ci.org/Adam16/MyOOS.png?branch=master)](http://travis-ci.org/Adam16/MyOOS)
+Master: [![Build Status](https://secure.travis-ci.org/Adam16/MyOOS.png?branch=master)](http://travis-ci.org/Adam16/MyOOS)
+Master: [![Coverage Status](https://coveralls.io/repos/r/Adam16/MyOOS/badge.png?branch=master)](https://coveralls.io/r/Adam16/MyOOS?branch=master)
 
    Der MyOOS [Shopsystem] ist eine umfassende Internet-Shopping-Lösung.
    Diese besticht durch ein besonders hohes Maß an Anpassungsfähigkeit,
