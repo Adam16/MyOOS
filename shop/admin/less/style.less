@@ -20,31 +20,22 @@
 // Navigation
 @import "template/main-navigation.less";
 
-/* 1. General 
-================================ */
 
-a:active { outline:0; }
+// Data 
+@import "template/data-block.less";
+@import "template/tables.less";
 
-/* Lists */
-ul,ol { list-style:none; }
-
-
-/* layout 
-================================ */
- 
- 
-/* Header
-================================ */
-
+@import "template/responsive.less";
 
 /* fontawesome icons */
 .icon-square:hover,
 .icon-rounded:hover,
 .icon-circled:hover {
-    background-color: #F03C02;
+    background-color: #428bca;
 }
 [class^="icon-"].active,
 [class*=" icon-"].active {
-    background-color: #F03C02;
+    background-color: #428bca;
 }
 
+@import "custom/famfamfam-icons.less";

@@ -20,7 +20,7 @@
    ---------------------------------------------------------------------- */
 
   /** ensure this file is being included by a parent file */
-  defined( 'OOS_VALID_MOD' ) or die( 'Direct Access to this location is not allowed.' );
+  defined( 'OOS_VALID_MOD' ) OR die( 'Direct Access to this location is not allowed.' );
 
  /**
   * Module
@@ -157,7 +157,7 @@
     for ($i = 0, $n = count($select_array); $i < $n; $i++) {
       $name = (($key) ? 'configuration[' . $key . ']' : 'configuration_value');
       $string .= '<br /><input type="radio" name="' . $name . '" value="' . $select_array[$i] . '"';
-      if ($key_value == $select_array[$i]) $string .= ' CHECKED';
+      if ($key_value == $select_array[$i]) $string .= ' checked="checked"';
       $string .= '> ' . $select_array[$i];
     }
 

@@ -20,13 +20,20 @@
    ---------------------------------------------------------------------- */
 
 /** ensure this file is being included by a parent file */
-defined( 'OOS_VALID_MOD' ) or die( 'Direct Access to this location is not allowed.' );
+defined( 'OOS_VALID_MOD' ) OR die( 'Direct Access to this location is not allowed.' );
 
 $aInfoMessage = array();
 
 if ($messageStack->size('error') > 0) {
     $aInfoMessage = array_merge ($aInfoMessage, $messageStack->output('error') );
 }
+
+if (isset($_SESSION['success_new_password']) && ($_SESSION['success_new_password'] == true)) {
+	$aInfoMessage[] = array('type' => 'success',
+                            'text' => $aLang['text_forgotten_success']);
+	$_SESSION['success_new_password'] = false;
+}
+
 
 for ($i = 0; $i < count($aInfoMessage); $i++) {
      switch ($aInfoMessage[$i]['type']) {

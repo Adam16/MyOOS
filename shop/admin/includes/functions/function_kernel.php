@@ -20,7 +20,7 @@
    ---------------------------------------------------------------------- */
 
   /** ensure this file is being included by a parent file */
-  defined( 'OOS_VALID_MOD' ) or die( 'Direct Access to this location is not allowed.' );
+  defined( 'OOS_VALID_MOD' ) OR die( 'Direct Access to this location is not allowed.' );
 
  /**
   * Admin Kernel
@@ -44,7 +44,7 @@
     if (!isset($_SESSION['login_id'])) {
       oos_redirect_admin(oos_href_link_admin($aFilename['login'], '', 'SSL'));
     } else {
-      $filename = preg_split('/\?/', basename($_SERVER['SCRIPT_FILENAME']));
+      $filename = preg_split('/\?/', basename($_SERVER['SCRIPT_NAME']));
       $filename = $filename[0];
       $page_key = array_search($filename, $aFilename);
 
@@ -94,33 +94,37 @@
   }
 
 
-  function oos_admin_files_boxes($filename, $sub_box_name) {
+function oos_admin_files_boxes($filename, $parameters, $sub_box_name)
+{
 
-    $sub_boxes = '';
+	$sub_boxes = '';
 
-    // Get database information
-    $dbconn =& oosDBGetConn();
-    $oostable =& oosDBGetTables();
+	// Get database information
+	$dbconn =& oosDBGetConn();
+	$oostable =& oosDBGetTables();
 
-    $aFilename = oos_get_filename();
+	$aFilename = oos_get_filename();
 
-    $admin_filestable = $oostable['admin_files'];
+	$admin_filestable = $oostable['admin_files'];
     $query = "SELECT admin_files_name
               FROM $admin_filestable
               WHERE FIND_IN_SET( '" . $_SESSION['login_groups_id'] . "', admin_groups_id)
                 AND admin_files_is_boxes = '0'
                 AND admin_files_name = '" . $filename . "'";
-    $result = $dbconn->Execute($query);
+	$result = $dbconn->Execute($query);
 
-    if ($result->RecordCount()) {
-      $sub_boxes = '<a href="' . oos_href_link_admin($aFilename[$filename]) . '" class="menuBoxContentLink">' . $sub_box_name . '</a><br />';
+	if ($result->RecordCount())
+	{
+		if(defined('NEW_MYOOS'))
+		{
+			$sub_boxes = '<a href="' . oos_href_link_admin($aFilename[$filename]) . '" class="menuBoxContentLink">' . $sub_box_name . '</a><br />';
+		} else {
+			$sub_boxes = '<a href="' . oos_href_link_admin($aFilename[$filename], $parameters) . '" title="' . $sub_box_name . '">' . $sub_box_name . '</a>';
+		}
     }
 
-    // Close result set
-    $result->Close();
-
     return $sub_boxes;
-  }
+}
 
 
   function oos_selected_file($filename) {

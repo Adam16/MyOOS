@@ -11,7 +11,7 @@
    ---------------------------------------------------------------------- */
 
   /** ensure this file is being included by a parent file */
-  defined( 'OOS_VALID_MOD' ) or die( 'Direct Access to this location is not allowed.' );
+  defined( 'OOS_VALID_MOD' ) OR die( 'Direct Access to this location is not allowed.' );
 
   if ($oEvent->installed_plugin('down_for_maintenance')) return false;
   if ($sContent == $aContents['customers_image']) return false;
@@ -59,4 +59,3 @@
   $smarty->assign('block_heading_myworld', $block_heading);
   $smarty->assign('myworld_block', $myworld_block);
 
-?>

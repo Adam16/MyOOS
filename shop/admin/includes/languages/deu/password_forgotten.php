@@ -4,8 +4,7 @@
 
    MyOOS [Shopsystem]
    http://www.oos-shop.de/
-   
-   
+  
    Copyright (c) 2003 - 2013 by the MyOOS Development Team.
    ----------------------------------------------------------------------
    Based on:
@@ -20,9 +19,15 @@
    Released under the GNU General Public License
    ---------------------------------------------------------------------- */
 
-define('ADMIN_PASSWORD_SUBJECT', STORE_NAME . ' - Ihr neues Passwort.');
-define('ADMIN_EMAIL_TEXT', '�er die Adresse ' . oos_server_get_var('REMOTE_ADDR') . ' haben wir eine Anfrage zur Passworterneuerung erhalten.' . "\n\n" . 'Ihr neues Passwort f&uuml;r \'' . STORE_NAME . '\' lautet ab sofort:' . "\n\n" . '   %s' . "\n\n");
+   
+$aLang['heading_title'] = 'Passwort vergessen';
 
-define('HEADING_PASSWORD_FORGOTTEN', 'Passwort vergessen');
-define('TEXT_PASSWORD_INFO', 'Bitte geben Sie Ihren Vornamen und Ihre E-Mail Adresse ein und klicken Sie auf Passwort senden. <br />In Krze erhalten Sie ein neues Passwort. Verwenden Sie dieses Passwort, um sich anzumelden.');
-?>
+$aLang['admin_password_subject'] =  STORE_NAME . ' - Ihr neues Passwort.';
+$aLang['admin_email_text'] = 'Guten Tag %s,' . "\n\n" . 'über die Adresse %s haben wir eine Anfrage zur Passworterneuerung erhalten.' . "\n\n" . 'Ihr neues Passwort für %s lautet ab sofort:' . "\n\n" . '   %s' . "\n\n" . 'Beste Grüße' . "\n\n";
+
+$aLang['entry_firstname'] = 'Vorname:';
+$aLang['placeholder_firstname'] = 'Ihr Vorname';
+$aLang['entry_email_address'] = 'E-Mail-Adresse:';
+$aLang['placeholder_email_address'] = 'Ihre E-Mail-Adresse';
+$aLang['text_forgotten_error'] = '<strong>FEHLER:</strong> Vorname oder E-Mail Adresse sind nicht hinterlegt!';
+$aLang['text_password_info'] = 'Bitte geben Sie Ihren Vornamen und Ihre E-Mail Adresse ein und klicken Sie auf Passwort senden. <br />In Kürze erhalten Sie ein neues Passwort. Verwenden Sie dieses Passwort, um sich anzumelden.';

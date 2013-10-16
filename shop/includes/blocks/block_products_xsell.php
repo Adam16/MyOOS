@@ -11,7 +11,7 @@
    ---------------------------------------------------------------------- */
 
   /** ensure this file is being included by a parent file */
-  defined( 'OOS_VALID_MOD' ) or die( 'Direct Access to this location is not allowed.' );
+  defined( 'OOS_VALID_MOD' ) OR die( 'Direct Access to this location is not allowed.' );
 
   $xsell_block = 'false';
 
@@ -43,4 +43,4 @@
 
   $smarty->assign('xsell_block', $xsell_block);
 
-?>
+

@@ -58,6 +58,7 @@
 
 // Global entries for the <html> tag
 define('HTML_PARAMS','dir="ltr" lang="de"');
+define('LANG', 'de');
 
 // charset for web pages and emails
 define('CHARSET', 'UTF-8');
@@ -72,7 +73,6 @@ define('HEADER_TITLE_TOP', 'Administration');
 define('HEADER_TITLE_SUPPORT_SITE', 'Supportseite');
 define('HEADER_TITLE_ONLINE_CATALOG', 'Online Shop');
 define('HEADER_TITLE_ADMINISTRATION', 'Administration');
-define('HEADER_TITLE_LOGOFF', 'Logoff');
 
 $aLang['header_title_top'] = 'Administration';
 $aLang['header_title_support_site'] = 'Supportseite';
@@ -82,7 +82,7 @@ $aLang['header_title_account'] = 'Mein Konto';
 $aLang['header_title_logoff'] = 'Abmelden';
 
 $aLang['collapse_menu'] = 'Menue ein/ausklappen';
-
+$aLang['login'] = 'Anmelden';
 
 
 // text for gender
@@ -93,22 +93,26 @@ define('FEMALE', 'Frau');
 define('DOB_FORMAT_STRING', 'tt.mm.jjjj');
 
 // configuration box text in includes/boxes/configuration.php
+$aLang['box_heading_configuration'] = 'Konfiguration';
 define('BOX_HEADING_CONFIGURATION', 'Konfiguration');
 define('BOX_CONFIGURATION_MYSTORE', 'Mein Shop');
 define('BOX_CONFIGURATION_LOGGING', 'Logging');
 define('BOX_CONFIGURATION_CACHE', 'Cache');
 
 // modules box text in includes/boxes/modules.php
+$aLang['box_heading_modules'] = 'Module';
 define('BOX_HEADING_MODULES', 'Module');
 define('BOX_MODULES_PAYMENT', 'Zahlungsweise');
 define('BOX_MODULES_SHIPPING', 'Versandart');
 define('BOX_MODULES_ORDER_TOTAL', 'Zusammenfassung');
 
 // plugins box text in includes/boxes/plugins.php
+$aLang['box_heading_plugins'] = 'Event Plugins';
 define('BOX_HEADING_PLUGINS', 'Plugins');
 define('BOX_PLUGINS_EVENT', 'Event Plugins');
 
 // categories box text in includes/boxes/catalog.php
+$aLang['box_heading_catalog'] = 'Artikelkatalog';
 define('BOX_HEADING_CATALOG', 'Artikelkatalog');
 define('BOX_CATALOG_CATEGORIES_PRODUCTS', 'Kategorien / Artikel');
 define('BOX_CATALOG_CATEGORIES_PRODUCTS_ATTRIBUTES', 'Produktmerkmale');
@@ -128,25 +132,31 @@ define('BOX_CATALOG_UP_SELL_PRODUCTS', 'UP Sell Products');
 define('BOX_CATALOG_QUICK_STOCKUPDATE', 'Quick Stock Update');
 
 // categories box text in includes/boxes/content.php
+$aLang['box_heading_content'] = 'Content Manager';
 define('BOX_HEADING_CONTENT', 'Content Manager');
 define('BOX_CONTENT_BLOCK', 'Block Manager');
 define('BOX_CONTENT_INFORMATION', 'Informationen');
 define('BOX_CONTENT_PAGE_TYPE', 'Content Seiten Type');
 
-// categories box text in includes/boxes/newsfeed.php
-define('BOX_HEADING_NEWSFEED', 'News Feed');
-define('BOX_NEWSFEED_MANAGER', 'News Feed Manager');
-define('BOX_NEWSFEED_CATEGORIES', 'News Feed Kategorien');
-
-
 // customers box text in includes/boxes/customers.php
+$aLang['box_heading_customers'] = 'Kunden';
 define('BOX_HEADING_CUSTOMERS', 'Kunden');
 define('BOX_CUSTOMERS_CUSTOMERS', 'Kunden');
 define('BOX_CUSTOMERS_ORDERS', 'Bestellungen');
 define('BOX_CAMPAIGNS', 'Kampagnen');
 define('BOX_ADMIN_LOGIN', 'Admin login');
 
+// gv_admin
+$aLang['box_heading_gv_admin'] = 'Gutscheine';
+define('BOX_HEADING_GV_ADMIN', 'Gutscheine');
+define('BOX_GV_ADMIN_QUEUE', 'Gutschein Queue');
+define('BOX_GV_ADMIN_MAIL', 'Gutschein eMail');
+define('BOX_GV_ADMIN_SENT', 'Gutscheine versandt');
+define('BOX_HEADING_COUPON_ADMIN','Rabattkupons');
+define('BOX_COUPON_ADMIN','Kupon Administrator');
+
 // taxes box text in includes/boxes/taxes.php
+$aLang['box_heading_location_and_taxes'] = 'Land / Steuer';
 define('BOX_HEADING_LOCATION_AND_TAXES', 'Land / Steuer');
 define('BOX_TAXES_COUNTRIES', 'Land');
 define('BOX_TAXES_ZONES', 'Bundesländer');
@@ -155,6 +165,7 @@ define('BOX_TAXES_TAX_CLASSES', 'Steuerklassen');
 define('BOX_TAXES_TAX_RATES', 'Steuersätze');
 
 // reports box text in includes/boxes/reports.php
+$aLang['box_heading_reports'] = 'Berichte';
 define('BOX_HEADING_REPORTS', 'Berichte');
 define('BOX_REPORTS_PRODUCTS_VIEWED', 'besuchte Artikel');
 define('BOX_REPORTS_PRODUCTS_PURCHASED', 'gekaufte Artikel');
@@ -165,6 +176,7 @@ define('BOX_REPORTS_KEYWORDS', 'Keyword Manager');
 define('BOX_REPORTS_REFERER' , 'HTTP Referers');
 
 // tools text in includes/boxes/tools.php
+$aLang['box_heading_tools'] = 'Hilfsprogramme';
 define('BOX_HEADING_TOOLS', 'Hilfsprogramme');
 define('BOX_TOOLS_BACKUP', 'Datenbanksicherung');
 define('BOX_TOOLS_DEFINE_LANGUAGE', 'Sprachen definieren');
@@ -172,20 +184,19 @@ define('BOX_TOOLS_MAIL', 'eMail versenden');
 define('BOX_TOOLS_NEWSLETTER_MANAGER', 'Rundschreiben Manager');
 define('BOX_TOOLS_WHOS_ONLINE', 'Wer ist Online');
 define('BOX_HEADING_ADMINISTRATORS', 'Administrators');
+
 define('BOX_ADMINISTRATORS_SETUP', 'Set Up');
 
 // localizaion box text in includes/boxes/localization.php
+$aLang['box_heading_localization'] = 'Sprachen/Währungen';
 define('BOX_HEADING_LOCALIZATION', 'Sprachen/Währungen');
 define('BOX_LOCALIZATION_CURRENCIES', 'Währungen');
 define('BOX_LOCALIZATION_LANGUAGES', 'Sprachen');
 define('BOX_LOCALIZATION_CUSTOMERS_STATUS', 'Kundengruppen');
 define('BOX_LOCALIZATION_ORDERS_STATUS', 'Bestellstatus');
 
-//rss
-define('BOX_HEADING_RSS', 'RSS');
-define('BOX_RSS_CONF', 'RSS');
-
 //information
+$aLang['box_heading_information'] = 'Information';
 define('BOX_HEADING_INFORMATION', 'Information');
 define('BOX_INFORMATION', 'Information');
 
@@ -309,8 +320,63 @@ define('IMAGE_UPDATE_CURRENCIES', 'Wechselkurse aktualisieren');
 define('IMAGE_UPLOAD', 'Hochladen');
 define('IMAGE_WISHLIST', 'Wunschzettel');
 
-$aLang['image_new_tax_rate'] = 'Neuen Steuersatz anlegen';
-$aLang['image_new_zone'] = 'Neues Bundesland einfügen';
+$aLang['button_ani_send_email'] = 'eMail versenden';
+$aLang['button_back'] = 'Zurück';
+$aLang['button_backup'] = 'Datensicherung';
+$aLang['button_cancel'] = 'Abbruch';
+$aLang['button_confirm'] = 'Bestätigen';
+$aLang['button_copy'] = 'Kopieren';
+$aLang['button_copy_to'] = 'Kopieren nach';
+$aLang['button_define'] = 'Definieren';
+$aLang['button_delete'] = 'Löschen';
+$aLang['button_edit'] = 'Bearbeiten';
+$aLang['button_email'] = 'eMail versenden';
+$aLang['button_featured'] = 'Top-Angebote';
+$aLang['button_file_manager'] = 'Datei-Manager';
+$aLang['button_icon_status_green'] = 'aktiv';
+$aLang['button_icon_status_green_light'] = 'aktivieren';
+$aLang['button_icon_status_red'] = 'inaktiv';
+$aLang['button_icon_status_red_light'] = 'deaktivieren';
+$aLang['button_icon_info'] = 'Information';
+$aLang['button_insert'] = 'Einfügen';
+$aLang['button_lock'] = 'Sperren';
+$aLang['button_move'] = 'Verschieben';
+$aLang['button_new_category'] = 'Neue Kategorie erstellen';
+$aLang['button_new_country'] = 'Neues Land aufnehmen';
+$aLang['button_new_currency'] = 'Neue Währung einfügen';
+$aLang['button_new_file'] = 'Neue Datei';
+$aLang['button_new_folder'] = 'Neues Verzeichnis';
+$aLang['button_new_language'] = 'Neue Sprache anlegen';
+$aLang['button_new_news'] = 'Neue News erstellen';
+$aLang['button_new_newsletter'] = 'Neues Rundschreiben';
+$aLang['button_new_product'] = 'Neuen Artikel aufnehmen';
+$aLang['button_new_tax_class'] = 'Neue Steuerklasse erstellen';
+$aLang['button_new_tax_rate'] = 'Neuen Steuersatz anlegen';
+$aLang['button_new_tax_zone'] = 'Neue Steuerzone erstellen';
+$aLang['button_orders'] = 'Bestellungen';
+$aLang['button_orders_invoice'] = 'Rechnung';
+$aLang['button_orders_packingslip'] = 'Lieferschein';
+$aLang['button_orders_webprinter'] = 'WebPrinter';
+$aLang['button_plugins_install'] = 'Plugins Installieren';
+$aLang['button_plugins_remove'] = 'Plugins Entfernen';
+$aLang['button_preview'] = 'Vorschau';
+$aLang['button_reset'] = 'Zurücksetzen';
+$aLang['button_restore'] = 'Zurücksichern';
+$aLang['button_save'] = 'Speichern';
+$aLang['button_search'] = 'Suchen';
+$aLang['button_select'] = 'Auswählen';
+$aLang['button_send'] = 'Versenden';
+$aLang['button_send_email'] = 'eMail versenden';
+$aLang['button_send_password'] = 'Passwort senden';
+$aLang['button_specials'] = 'Sonderangebot';
+$aLang['button_status'] = 'Kundengruppe';
+$aLang['button_unlock'] = 'Entsperren';
+$aLang['button_update'] = 'Aktualisieren';
+$aLang['button_update_currencies'] = 'Wechselkurse aktualisieren';
+$aLang['button_upload'] = 'Hochladen';
+$aLang['button_wishlist'] = 'Wunschzettel';
+$aLang['button_new_tax_rate'] = 'Neuen Steuersatz anlegen';
+$aLang['button_new_zone'] = 'Neues Bundesland einfügen';
 
 
 define('ICON_CROSS', 'Falsch');
@@ -360,6 +426,19 @@ define('TEXT_DISPLAY_NUMBER_OF_INFORMATION', 'Angezeigt werden <b>%d</b> bis <b>
 define('PREVNEXT_BUTTON_PREV', '&lt;&lt;');
 define('PREVNEXT_BUTTON_NEXT', '&gt;&gt;');
 
+$aLang['prevnext_title_first_page'] = 'erste Seite';
+$aLang['prevnext_title_previous_page'] = 'vorherige Seite';
+$aLang['prevnext_title_next_page'] = 'nächste Seite';
+$aLang['prevnext_title_last_page'] = 'letzte Seite';
+$aLang['prevnext_title_page_no'] = 'Seite %d';
+$aLang['prevnext_title_prev_set_of_no_page'] = 'Vorhergehende %d Seiten';
+$aLang['prevnext_title_next_set_of_no_page'] = 'Nächste %d Seiten';
+$aLang['prevnext_button_first'] = '&lt;&lt;ERSTE';
+$aLang['prevnext_button_prev'] = '&lt;&lt;&nbsp;vorherige';
+$aLang['prevnext_button_next'] = 'nächste&nbsp;&gt;&gt;';
+$aLang['prevnext_button_last'] = 'LETZTE&gt;&gt;';
+
+
 define('TEXT_DEFAULT', 'Standard');
 define('TEXT_SET_DEFAULT', 'als Standard definieren');
 define('TEXT_FIELD_REQUIRED', '&nbsp;<span class="fieldRequired">* erforderlich</span>');
@@ -376,12 +455,6 @@ define('TEXT_TOP', 'Top');
 define('ENTRY_YES','ja');
 define('ENTRY_NO','nein');
 
-define('BOX_HEADING_GV_ADMIN', 'Gutscheine');
-define('BOX_GV_ADMIN_QUEUE', 'Gutschein Queue');
-define('BOX_GV_ADMIN_MAIL', 'Gutschein eMail');
-define('BOX_GV_ADMIN_SENT', 'Gutscheine versandt');
-define('BOX_HEADING_COUPON_ADMIN','Rabattkupons');
-define('BOX_COUPON_ADMIN','Kupon Administrator');
 
 define('IMAGE_RELEASE', 'Gutschein einlösen');
 
@@ -427,6 +500,8 @@ define('BOX_ADMINISTRATOR_MEMBERS', 'Gruppenmitglieder');
 define('BOX_ADMINISTRATOR_MEMBER', 'Mitglieder');
 define('BOX_ADMINISTRATOR_BOXES', 'Dateizugriff');
 
+$aLang['box_heading_administrator'] = 'Redakteure';
+
 // images
 define('IMAGE_FILE_PERMISSION', 'Dateizugriffs-Erlaubnis');
 define('IMAGE_GROUPS', 'Gruppenliste');
@@ -442,6 +517,7 @@ define('TEXT_DISPLAY_NUMBER_OF_MEMBERS', 'Zeige an <b>%d</b> bis <b>%d</b> (von 
 
 
 define('PULL_DOWN_DEFAULT', 'Bitte wählen');
+$aLang['bulk_actions'] = 'Aktion wählen';
 
 define('BOX_REPORTS_RECOVER_CART_SALES', 'Warenkorbabbrüche');
 define('BOX_TOOLS_RECOVER_CART', 'Warenkorbabbrüche');

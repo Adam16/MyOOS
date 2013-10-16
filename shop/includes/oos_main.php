@@ -20,7 +20,7 @@
    ---------------------------------------------------------------------- */
 
 /** ensure this file is being require d by a parent file */
-defined( 'OOS_VALID_MOD' ) or die( 'Direct Access to this location is not allowed.' );
+defined( 'OOS_VALID_MOD' ) OR die( 'Direct Access to this location is not allowed.' );
 
 // debug
 $debug = 'false';
@@ -34,7 +34,7 @@ if (is_readable('includes/local/configure.php')) {
 }
 
 // Version information
-define('OOS_VERSION', '2.0.11 -dev');
+define('OOS_VERSION', '2.0.12 -dev');
 // Complete software name string
 define('OOS_FULL_NAME', 'MyOOS ' . OOS_VERSION);
 

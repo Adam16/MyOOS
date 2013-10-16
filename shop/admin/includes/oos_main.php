@@ -20,7 +20,7 @@
    ---------------------------------------------------------------------- */
 
 /** ensure this file is being required by a parent file */
-defined( 'OOS_VALID_MOD' ) or die( 'Direct Access to this location is not allowed.' );
+defined( 'OOS_VALID_MOD' ) OR die( 'Direct Access to this location is not allowed.' );
 
 // debug
 $debug = 'true';
@@ -131,7 +131,7 @@ if (!isset($_SESSION['language']) || isset($_GET['language'])) {
 $aLang = array();
 $sLanguage = oos_var_prep_for_os($_SESSION['language']);
 require 'includes/languages/' . $sLanguage . '.php';
-$current_page = basename($_SERVER['SCRIPT_FILENAME']);
+$current_page = basename($_SERVER['SCRIPT_NAME']);
 if (file_exists('includes/languages/' . $sLanguage . '/' . $current_page)) {
 	require 'includes/languages/' . $sLanguage . '/' . $current_page;
 }
@@ -188,9 +188,8 @@ if (!defined('DEFAULT_LANGUAGE')) {
 
 require 'includes/functions/function_added.php';
 
-if (basename($_SERVER['SCRIPT_FILENAME']) != $aFilename['login'] 
-   && basename($_SERVER['SCRIPT_FILENAME']) != $aFilename['password_forgotten']) { 
+if (basename($_SERVER['SCRIPT_NAME']) != $aFilename['login'] 
+   && basename($_SERVER['SCRIPT_NAME']) != $aFilename['password_forgotten']) { 
     oos_admin_check_login(); 
 }
-
 
