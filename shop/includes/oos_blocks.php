@@ -18,7 +18,7 @@
    ---------------------------------------------------------------------- */
 
 /** ensure this file is being included by a parent file */
-defined( 'OOS_VALID_MOD' ) or die( 'Direct Access to this location is not allowed.' );
+defined( 'OOS_VALID_MOD' ) OR die( 'Direct Access to this location is not allowed.' );
 
 $aContentBlock = array();
 
@@ -83,8 +83,8 @@ foreach ($block_result as $block) {
 
 }
 
-
-for ($i = 0, $n = count($aContentBlock); $i < $n; $i++) {
+$nContentBlock = count($aContentBlock);
+for ($i = 0, $nContentBlock; $i < $n; $i++) {
 	switch ($aContentBlock[$i]['side']) {
 
 	case 'left':

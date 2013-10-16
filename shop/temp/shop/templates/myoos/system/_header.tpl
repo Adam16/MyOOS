@@ -22,9 +22,6 @@
 <link href="{$theme}/css/font-awesome.min.css" rel="stylesheet" />
 <!-- Included Custom CSS Files -->
 
-<!-- Bootstrap style responsive -->	
-<link href="themes/css/bootstrap-responsive.min.css" rel="stylesheet"/>
-
 <!-- Place favicon.ico and apple-touch-icon.png -->
 <link rel="shortcut icon" href="{$theme}/images/ico/favicon.ico">
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{$theme}/images/ico/apple-touch-icon-144-precomposed.png">
@@ -50,7 +47,7 @@
 	<header>
 	<div class="container">
 		<div class="row nomargin">
-			<div class="span12">				
+			<div class="col-md-12">				
 				<div class="headnav">
 					<ul>
 						<li class="first"><a href="{html_href_link content=$contents.account connection=SSL}" title="{$lang.header_title_my_account}"><i class="icon-user"></i> {$lang.header_title_my_account}</a></li>
@@ -66,11 +63,9 @@
 			</div>
 		</div>			
 		<div class="row">
-			<div class="span4">
-				<div class="logo">
+			<div class="col-md-6 logo">
 					<a href="{html_href_link content=$contents.main}"><img src="{$theme_image}/logo.gif" width="140" height="179" alt="{$smarty.const.STORE_NAME}" title="{$smarty.const.STORE_NAME}" class="logo" /></a>
-					<h1>Flat and trendy bootstrap template</h1>
-				</div>
+					<h1>bootstrap template</h1>
 			</div>
 
 		</div>

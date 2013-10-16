@@ -14,9 +14,15 @@
 					{$lang.text_welcome}
 				</div>		
 {foreach item=error from=$oos_error_message}
-				<div class="alert alert-error alert-block fade in">
+				<div class="alert alert-danger alert-block fade in">
 					<button type="button" class="close" data-dismiss="alert">&times;</button>
 					{$error.text}
+				</div>
+{/foreach}
+{foreach item=success from=$oos_info_message}
+				<div class="alert alert-success alert-block fade in">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					{$success.text}
 				</div>
 {/foreach}
 				<!-- /alert -->

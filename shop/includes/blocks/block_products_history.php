@@ -11,7 +11,7 @@
    ---------------------------------------------------------------------- */
 
   /** ensure this file is being included by a parent file */
-  defined( 'OOS_VALID_MOD' ) or die( 'Direct Access to this location is not allowed.' );
+  defined( 'OOS_VALID_MOD' ) OR die( 'Direct Access to this location is not allowed.' );
 
   $products_history_block = 'false';
 
@@ -35,4 +35,4 @@
 
   $smarty->assign('products_history_block', $products_history_block);
 
-?>
+

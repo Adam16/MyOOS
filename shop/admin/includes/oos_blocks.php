@@ -19,9 +19,11 @@
    Released under the GNU General Public License
    ----------------------------------------------------------------------  */
 
-  /** ensure this file is being included by a parent file */
-  defined( 'OOS_VALID_MOD' ) or die( 'Direct Access to this location is not allowed.' );
+/** ensure this file is being included by a parent file */
+defined( 'OOS_VALID_MOD' ) OR die( 'Direct Access to this location is not allowed.' );
 
+if(defined('NEW_MYOOS'))
+{
 
   if (oos_admin_check_boxes('administrator.php') == true) {
     include 'includes/boxes/administrator.php';
@@ -73,3 +75,40 @@
   if (oos_admin_check_boxes('information.php') == true) {
     include 'includes/boxes/information.php';
   }
+} else {
+	$aFilesResults = array();
+	$aContentBlock  = array();
+    $admin_filestable = $oostable['admin_files'];
+    $query = "SELECT admin_files_id, admin_files_name, admin_files_is_boxes, admin_files_to_boxes
+              FROM $admin_filestable
+              WHERE FIND_IN_SET( '" . intval($_SESSION['login_groups_id']) . "', admin_groups_id) 
+			  AND admin_files_is_boxes = '1'";
+	$aFilesResults = array();			
+	$aFilesResults = $dbconn->GetAll($query);
+
+	foreach ($aFilesResults as $block) {
+		$block_file = substr($block['admin_files_name'], 0, -4);
+
+		if (empty($block_file))
+		{
+			continue;
+		}
+
+		if (is_readable('includes/blocks/block_' . $block_file . '.php'))
+		{
+			include '/includes/blocks/block_' . $block_file . '.php';	
+
+			$block_tpl = 'default/blocks/' . $block_file . '.tpl';
+			$block_content = $smarty->fetch($block_tpl);
+
+			$aContentBlock[] = array('block_content' => $block_content );
+		}
+	}								 
+
+
+	for ($i = 0, $n = count($aContentBlock); $i < $n; $i++) {
+		$smarty->append('oos_block', array('content' => $aContentBlock[$i]['block_content']));
+
+	}
+
+}
